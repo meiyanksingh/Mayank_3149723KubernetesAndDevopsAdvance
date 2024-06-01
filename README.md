@@ -2,6 +2,20 @@
 ## Demo Link
 https://drive.google.com/file/d/1IlaqZsdoQbLMoEJWqrTMuxXRArqqC_bI/view?usp=drive_link
 
+## spring boot project
+https://github.com/meiyanksingh/Mayank_3149723KubernetesAndDevopsAdvance/tree/main/KubernetesAssignment/nagp
+
+## Docker Hub images
+### Spring Boot project
+https://hub.docker.com/search?q=mayanksnagp2024%2F
+### Mongo Project
+https://hub.docker.com/_/mongo
+
+## Api Service Deployment
+https://github.com/meiyanksingh/Mayank_3149723KubernetesAndDevopsAdvance/tree/main/KubernetesAssignment/microservice_deployment
+
+## Steps: 
+
 ### 1. Run a Docker Engine
 
 ### 2. Create a jar file of spring project
