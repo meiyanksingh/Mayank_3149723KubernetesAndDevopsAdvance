@@ -2,7 +2,7 @@
 ## Demo Link
 https://drive.google.com/file/d/1IlaqZsdoQbLMoEJWqrTMuxXRArqqC_bI/view?usp=drive_link
 ### One drive
-https://nagarro-my.sharepoint.com/:v:/p/mayank_singh/EfxeTstVcRdPqDfw4aRW8DwBl_6qotIURk9LKbFnoE5e2A?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=E73bC4
+https://nagarro-my.sharepoint.com/:v:/p/mayank_singh/EfxeTstVcRdPqDfw4aRW8DwBwbR2e320Abe8NsNgpO1X1g?e=8rkq3Z
 
 ## spring boot project
 https://github.com/meiyanksingh/Mayank_3149723KubernetesAndDevopsAdvance/tree/main/KubernetesAssignment/nagp
