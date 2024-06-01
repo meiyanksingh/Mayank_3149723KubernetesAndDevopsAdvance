@@ -1,0 +1,148 @@
+
+        .movies-container {
+    padding-bottom: 2rem;
+}
+.current-movies {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+}
+
+.current-movie {
+    background: linear-gradient(45deg, rgba(4, 15, 19, .9), rgba(81, 5, 5, .9));
+    padding: 2rem;
+    border-radius: .5rem;
+}
+
+.marquee-container {
+    background-color: red;
+    padding: 10px;
+}
+
+.marquee-text {
+    color: white;
+    font-size: 18px;
+}
+
+
+    .refresh-button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+   .delete-button {
+      background-color: red; /* red */
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+
+.lang-style {
+    background-color: #c9c9c9; /* Set background color to white */
+    color: black; /* Set text color to black */
+    font-family: 'Arial', sans-serif; /* Use a specific font family */
+    font-size: 10px; /* Set font size to 18 pixels */
+    border-radius: 5px; /* Adjust border radius to create curved corners */
+    border: 2px #c9c9c9;
+
+    padding: 5px 10px;
+    /* Add any other styles you want */
+}
+
+   .submit-button {
+    background-color: #f54242; /* red */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  .sidebar {
+    background: linear-gradient(45deg, rgba(255, 255, 255, .05), rgba(205, 140, 56, .15));
+    backdrop-filter: blur(5px);
+    height: fit-content;
+    border-radius: 1rem;
+    padding: 2rem 2.5rem;
+}
+.sidebar-groups {
+    margin-bottom: 1rem;
+}
+
+.grid-container {
+  display: flex;
+
+  background-color: #ffffff;
+  padding: 10px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0);
+
+  font-size: 15px;
+
+}
+
+
+
+.movie-title {
+    color: #fff;
+    margin-bottom: .2rem;
+    font-size: 20px;
+}
+
+.text-style {
+    color: white; /* Set text color to white */
+    font-family: 'Arial', sans-serif; /* Use a specific font family */
+    font-size: 12px; /* Set font size to 18 pixels */
+    /* Add any other styles you want */
+}
+
+.time-style {
+    color: #4ff30a; /* Set text color to white */
+    font-family: 'Arial', sans-serif; /* Use a specific font family */
+    font-size: 12px; /* Set font size to 18 pixels */
+    /* Add any other styles you want */
+}
+
+
+
+.buy-style {
+    color: yellow; /* Set text color to white */
+    font-family: 'Arial', sans-serif; /* Use a specific font family */
+    font-size: 12px; /* Set font size to 18 pixels */
+    /* Add any other styles you want */
+}
+
+.booking {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.price {
+    color: #cd8c38;
+}

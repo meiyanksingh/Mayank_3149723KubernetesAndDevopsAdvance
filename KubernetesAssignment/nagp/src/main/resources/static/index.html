@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Add Movie</title>
+</head>
+<body>
+<form id="movieForm">
+    Movie Name:
+    <input type="text" id="movieName" name="movieName" required>
+
+    <div class="sidebar-groups">
+        <h5 class="sg-title">Show Time</h5>
+        <input type="radio" id="morning" name="time" value="8:00AM">
+        <label for="morning">8:00AM</label>
+        <input type="radio" id="afternoon" name="time" value="2:00PM">
+        <label for="afternoon">2:00PM</label>
+        <input type="radio" id="night" name="time" value="8:00PM">
+        <label for="night">8:00PM</label>
+    </div>
+    <div class="sidebar-groups">
+        <h5 class="sg-title">Categories</h5>
+        <input type="checkbox" id="adventure" name="categories" value="adventure">
+        <label for="adventure">Adventure</label>
+        <input type="checkbox" id="action" name="categories" value="action">
+        <label for="action">Action</label>
+        <input type="checkbox" id="animation" name="categories" value="animation">
+        <label for="animation">Animation</label>
+        <input type="checkbox" id="comedy" name="categories" value="comedy">
+        <label for="comedy">Comedy</label>
+        <input type="checkbox" id="science" name="categories" value="science Fiction">
+        <label for="science">Science Fiction</label>
+        <input type="checkbox" id="thriller" name="categories" value="thriller">
+        <label for="thriller">Thriller</label>
+        <input type="checkbox" id="history" name="categories" value="history">
+        <label for="history">History</label>
+        <input type="checkbox" id="documentary" name="categories" value="documentary">
+        <label for="documentary">Documentary</label>
+        <input type="checkbox" id="fantasy" name="categories" value="fantasy">
+        <label for="fantasy">Fantasy</label>
+    </div>
+    <button class="submit-button" type="submit" value="Submit" onclick="submitForm(event)">Submit</button>
+    <button class="refresh-button"  onclick="fetchAndPopulateMovies()">Refresh</button>
+    <button class="delete-button"  onclick="deleteAllMovies()">Delete All Movies</button>
+   <br>
+    <div class="marquee-container">
+        <marquee behavior="scroll" direction="left" class="marquee-text">Refresh to show upcoming movies in gurugram</marquee>
+
+    </div>
+     <br>
+</form>
+
+<script>
+
+
+
+ function submitForm(event) {
+        event.preventDefault();
+        addMovie();
+        }
+
+
+        function addMovie() {
+            var movieName = document.getElementById("movieName").value;
+             const checkboxes = document.querySelectorAll('input[name="categories"]:checked');
+             const radio = document.querySelectorAll('input[name="time"]:checked');
+
+    // Extract values from checked checkboxes and join them into a string
+    const selectedCategoriesString = Array.from(checkboxes).map(checkbox => checkbox.value).join(', ');
+
+    const selectedTimeString = Array.from(radio).map(radio => radio.value).join(', ');
+
+            var data = { "name": movieName ,"categories":selectedCategoriesString, "showTime": selectedTimeString};
+
+            fetch('/movies/insert', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                fetchAndPopulateMovies()
+                console.log('Success:', data);
+                alert('Movie added successfully!');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Failed to add movie. Please try again. ${error}' );
+            });
+        }
+
+
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+</body>
+<body>
+
+
+
+
+
+<div class="current-movies" id="movieGridId">
+
+</div>
+
+
+<script>
+
+function deleteAllMovies(){
+     fetch('/movies/deleteAllData',{ method: 'DELETE',})
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                else{
+                 alert('All movie deleted successfully!');
+                }
+
+            })
+            .then(data => {
+            const movieGrid = document.getElementById('movieGridId');
+            movieGrid.innerHTML = ""; // Clear existing data
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Failed to delete movies. Please try again.');
+            });
+}
+        function fetchAndPopulateMovies() {
+            fetch('/movies/')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                populateMovie(data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Failed to fetch movies. Please try again.');
+            });
+        }
+
+
+
+
+         function populateMovie(movies) {
+            const movieGrid = document.getElementById('movieGridId');
+            movieGrid.innerHTML = ""; // Clear existing data
+
+            movies.forEach(function(movie) {
+                  const movieDiv = document.createElement('div');
+            movieDiv.classList.add('current-movie');
+
+            movieDiv.innerHTML = `
+                <h3 class="movie-title"> ${movie.name}</h3>
+                <p class="lang-style"> ${movie.categories}</p>
+                <div class="booking">
+                    <h2 class="lang-style">${movie.showTime}</h2>
+                    <a href="#" class="buy-style">Buy Tickets</a><br>
+
+                </div>
+
+                <p class="lang-style"> Hindi, English, Tamil, Telugu</p>
+
+                <p class="lang-style"> 2D,4DX,3D,IMAX 2D</p>
+
+            `;
+
+            movieGrid.appendChild(movieDiv);
+            });
+        }
+
+
+</script>
+
+</body>
+
+

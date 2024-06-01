@@ -1,0 +1,5 @@
+com\mks\nagp\database\document\Movie.class
+com\mks\nagp\database\controller\MovieController.class
+com\mks\nagp\database\service\MovieService.class
+com\mks\nagp\database\repository\MovieRepository.class
+com\mks\nagp\NagpApplication.class
