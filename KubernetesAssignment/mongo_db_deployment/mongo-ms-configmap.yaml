@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mongo-config
+data:
+  data:
+  mongodb.uri: mongodb://mongo:27017/movie_db
