@@ -16,6 +16,20 @@ https://hub.docker.com/_/mongo
 ## Api Service Deployment
 https://github.com/meiyanksingh/Mayank_3149723KubernetesAndDevopsAdvance/tree/main/KubernetesAssignment/microservice_deployment
 
+## URL for Service API tier to view the records from backend tier
+```bash
+|-----------|-------------|-------------|---------------------------|
+| NAMESPACE |    NAME     | TARGET PORT |            URL            |
+|-----------|-------------|-------------|---------------------------|
+| default   | api-service |          80 | http://192.168.49.2:30798 |
+|-----------|-------------|-------------|---------------------------|
+* Starting tunnel for service api-service.
+|-----------|-------------|-------------|------------------------|
+| NAMESPACE |    NAME     | TARGET PORT |          URL           |
+|-----------|-------------|-------------|------------------------|
+| default   | api-service |             | http://127.0.0.1:64896 |
+|-----------|-------------|-------------|------------------------|
+```
 ## Steps: 
 
 ### 1. Run a Docker Engine
